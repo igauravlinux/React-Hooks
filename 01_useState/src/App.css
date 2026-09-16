@@ -1,0 +1,13 @@
+input{
+    border: 2px solid gray;
+}
+
+h1{
+    font-size: 2rem;
+}
+
+button{
+    border: 1px solid gray;
+    padding: 5px 10px;
+    margin-top: 5px;
+}
