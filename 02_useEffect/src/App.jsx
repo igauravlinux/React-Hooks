@@ -3,13 +3,15 @@ import './App.css'
 import Learn from './component/Learn'
 import ApiFetch from './component/ApiFetch'
 import ApiSec from './component/ApiSec'
+import Counter from './component/Counter'
 
 function App() {
   return (
     <div className='parent'>
         {/* <Learn/> */}
         {/* <ApiFetch /> */}
-        <ApiSec />
+        {/* <ApiSec /> */}
+        <Counter/>
     </div>
   )
 }

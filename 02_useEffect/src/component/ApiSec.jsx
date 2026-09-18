@@ -37,7 +37,7 @@ function ApiSec() {
   return (
     <div>
 
-        {loading ? <h1>Loadig....</h1> : ""}
+        {loading ? <h1>Loading....</h1> : ""}
 
         {users.map((user) => {
             return <li key={user.id}>Name is: {user.name}, UserName is: {user.username}</li>
