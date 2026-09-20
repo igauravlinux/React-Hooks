@@ -5,15 +5,21 @@ function Learn() {
 
   const [count , setCount] = useState(0);
 
-  const heyBabeProps = useCallback(() =>{
-    
-  },[count]);
+  const heyBaby = useCallback(() =>{
+    console.log("learn......");
+  },[count])
+      
 
   return (
     <div>
-        <Headers heyBabeProps={heyBabeProps} />
-        <h1>{count}</h1>
-        <button onClick={()=> {setCount(prev => prev + 1)}}>Increment</button>      
+
+    <Headers heyBaby={heyBaby}/>
+
+    <h1>{count}</h1>
+    <button onClick={()=> {setCount(prev => prev + 1)}}>Increment</button>
+
+
+
     </div>
   )
 }

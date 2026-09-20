@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Header = () => {
+const Header = ({heyBaby}) => {
 
-  console.log("Header Redered...");
+  console.log("Header rendered....");
   
 
   return (
