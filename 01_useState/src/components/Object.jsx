@@ -4,33 +4,28 @@ import '../App.css'
 
 function Object() {
 
-    const [student , setStudent] = useState({
-        name : "Khusi khatun",
-        roll : 12,
-        course : "B.Tech"
-    })
-    
+    const [name , setName] = useState({
+        fullName : "Khusi",
+        lastName : "Kumair",
+        age : 19
+    });
 
-    const handleChange = () =>{
-       
-        // Direct update
-        // setStudent({...student, name : "Khusi Sinha"})
+    function updateValue (){
+        // Direct update 
+        // setName({...name, lastName : "Kumari" , age : 20})
 
         // functional update
-         setStudent((prev) =>{
-            return {...prev, name : "Khusi Sinha"}
-        })
+        setName((prev) =>{
+            return {...prev, lastName : "Kumari" , age : 22}
+        }) 
     }
-
 
   return (
     <div>
 
-        <p>Student name is {student.name}, rollNo : {student.roll},
-            and Course is : {student.course}
-        </p>
+        <h1>{name.fullName} {name.lastName} {name.age}</h1>
 
-        <button onClick={handleChange}>Change data</button>
+        <button onClick={updateValue}>Update</button>
 
     </div>
   )
