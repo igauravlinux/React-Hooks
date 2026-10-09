@@ -3,11 +3,12 @@ import { useState , useEffect } from 'react'
 
 function Counter() {
 
-    const [count, setCount] = useState(0);
+    const [count , setCount] = useState(0);
 
-    useEffect(()=> {
-        setTimeout(()=>{
-            setCount(prev => prev + 1);
+    useEffect(() =>{
+        setTimeout(() =>{
+            setCount(prev => prev + 1)
+            console.log("hey")
         },1000)
     },[])
 

@@ -8,37 +8,28 @@ function ApiFetch() {
 
     let api = 'https://jsonplaceholder.typicode.com/users';
 
-    async function fetchApi () {
-
-        
-        try{
-            const response = await fetch(api);
-
-            const data = await response.json();
-
-            setUsers(data);
-            console.log(data);
-            
-
-
-        }catch(error){
-            console.log(error);
-        }
-
-    }
-
-
-    useEffect(()=>{
-        fetchApi();
-    },[]);
+   useEffect(() =>{
+        fetch(api)
+        .then((res) => res.json())
+        .then((data) => setUsers(data))
+        .catch((err) => console.log(err)) 
+   },[])
 
 
   return (
     <div>
 
-        {users.map((user)=>{
-           return <li key={user.id}> {user.name} </li>
-        })}
+        {
+            users && users.length > 0 ?
+
+            users.map((user) => (
+                <li key={user.id}>{user.username}</li>
+            ))
+
+            :
+
+            <h1>Loading...</h1>
+        }
 
     </div>
   )
