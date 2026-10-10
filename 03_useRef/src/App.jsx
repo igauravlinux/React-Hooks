@@ -8,7 +8,7 @@ function App() {
     <div>
       {/* <Focus/> */}
       {/* <Timer /> */}
-      {/* <PreviousValue /> */}
+      <PreviousValue />
     </div>
   )
 }

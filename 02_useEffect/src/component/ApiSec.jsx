@@ -1,47 +1,55 @@
-import axios from 'axios';
+import React from 'react'
 import { useState , useEffect } from 'react';
 
-function ApiSec() {
-    let apiUrl = 'https://jsonplaceholder.typicode.com/users';
 
-    const [users, setUsers] = useState([]);
-    const [loading , setLoading] = useState(true);
+const ApiSec = () => {
 
-    async function fetchApi () {
+    let api = 'https://jsonplaceholder.typicode.com/users';
+
+    const [loading, setloading] = useState(true);
+    const [data, setdata] = useState([]);
+
+
+    useEffect(() =>{
+      setTimeout(() =>{
 
         try{
-            let responce = await axios.get(apiUrl)
-
-            let data = responce.data;
-
-            setUsers(data);
-
-            console.log(data);
-        }catch(error){
-            console.error(error);
+          fetch(api)
+        .then((res)=> res.json())
+        .then((data) => setdata(data.slice(0,4)))
+        // .then((data) => console.log(data))
+    
+        }catch{
+          console.error("error occured")
         }finally{
-            setLoading(false);
+          setloading(false);
         }
-    }
-
-    useEffect(()=>{
-
-        setTimeout(()=>{
-            fetchApi();
-        },5000)
 
 
+      },3000)
     },[])
+
+
+
 
 
   return (
     <div>
 
-        {loading ? <h1>Loading....</h1> : ""}
+      {loading ? <h1>Loading.....</h1> : ""}
 
-        {users.map((user) => {
-            return <li key={user.id}>Name is: {user.name}, UserName is: {user.username}</li>
-        })}
+      {
+      
+      data.map((d) =>(
+        <div key={d.id}>
+
+            <h3>Username: {d.name}, and Email is: {d.email}</h3>
+
+
+        </div>
+      ))
+      
+      }
 
     </div>
   )

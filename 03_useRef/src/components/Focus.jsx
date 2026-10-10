@@ -1,27 +1,17 @@
 import React from 'react'
 import { useRef } from 'react'
 
-function Focus() {
+const Focus = () => {
 
-    const focusRef = useRef(null);
+  const inputRef = useRef(null);
 
-    const handleInput = () =>{  
-        focusRef.current.focus();
-        focusRef.current.style.color = 'red';
-        focusRef.current.style.padding = '20px';
-        focusRef.current.style.border = '2px solid red';
+    const handleFocus = () =>{
+      inputRef.current.focus();
     }
-
   return (
     <div>
-
-    <input ref={focusRef} type="text" />
-
-    <br />
-
-    <button onClick={handleInput}>Focus</button>
-
-
+        <input type="text" ref={inputRef} />
+        <button onClick={handleFocus}>Focus</button>
     </div>
   )
 }
